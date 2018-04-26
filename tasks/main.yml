@@ -1,0 +1,37 @@
+---
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Kibana.
+  package: name=kibana state=present
+
+- name: Configure Kibana.
+  template:
+    src: kibana.yml.j2
+    dest: /etc/kibana/kibana.yml
+  notify: restart kibana
+  
+- name: Ensure Kibana is started and enabled at boot.
+  service:
+    name: kibana
+    state: started
+    enabled: yes
+  notify: restart kibana
+
+- name: Deamon Kibana
+  command: "update-rc.d kibana defaults 95 10"
+
+- name: Service Elastic kibana enable
+  command: "systemctl enable kibana.service"
+
+- name: Start service kibana, if not running
+  service:
+    name: kibana
+    state: started
+
+- name: Daemon kibana reload
+  command: "/bin/systemctl daemon-reload"
+
+- name: kibana start
+  command: "/bin/systemctl enable kibana.service"
+  notify: restart kibana

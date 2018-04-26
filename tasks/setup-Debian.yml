@@ -1,0 +1,9 @@
+---
+- name: Ensure dependency is installed (Ubuntu).
+  apt: name=apt-transport-https state=present
+
+- name: Install latest version of "elasticsearch" and "install-recommends"
+  apt:
+    name: elasticsearch
+    state: latest
+    install_recommends: yes
