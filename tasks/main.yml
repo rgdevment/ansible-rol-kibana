@@ -7,7 +7,7 @@
 
 - name: Configure Kibana.
   template:
-    src: kibana.yml.j2
+    src: kibana.yml.base
     dest: /etc/kibana/kibana.yml
   notify: restart kibana
   

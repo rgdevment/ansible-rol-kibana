@@ -1,1 +1,4 @@
 ---
+server_host: 0.0.0.0
+server_name: debianserver
+server_elastic_search: 0.0.0.0
