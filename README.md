@@ -1,4 +1,8 @@
-# Ansible Role: Elasticsearch
+# URL ROL
+
+https://galaxy.ansible.com/MarioDevment/kibana/
+
+# Ansible Role: Kibana
 
 An Ansible Role that installs Elasticsearch on Debian.
 
