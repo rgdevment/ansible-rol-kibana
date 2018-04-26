@@ -18,20 +18,14 @@
     enabled: yes
   notify: restart kibana
 
-- name: Deamon Kibana
+- name: Deamon kibana
   command: "update-rc.d kibana defaults 95 10"
 
-- name: Service Elastic kibana enable
-  command: "systemctl enable kibana.service"
-
-- name: Start service kibana, if not running
-  service:
-    name: kibana
-    state: started
-
-- name: Daemon kibana reload
+- name: deamon kibana reload
   command: "/bin/systemctl daemon-reload"
 
-- name: kibana start
+- name: Service kibana enable
   command: "/bin/systemctl enable kibana.service"
-  notify: restart kibana
+
+- name: kibana start
+  command: "systemctl start kibana.service"
