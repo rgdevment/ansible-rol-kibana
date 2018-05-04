@@ -2,8 +2,8 @@
 - name: Ensure dependency is installed (Ubuntu).
   apt: name=apt-transport-https state=present
 
-- name: Install latest version of "elasticsearch" and "install-recommends"
+- name: Install latest version of "kibana" and "install-recommends"
   apt:
-    name: elasticsearch
+    name: kibana
     state: latest
     install_recommends: yes

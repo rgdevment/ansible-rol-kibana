@@ -1,5 +1,8 @@
 ---
-- include: setup-Debian.yml
+- include_tasks: setup-centos.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Install Kibana.
