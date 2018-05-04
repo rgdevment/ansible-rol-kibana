@@ -1,7 +1,3 @@
-# URL ROL
-
-https://galaxy.ansible.com/MarioDevment/kibana/
-
 # Ansible Role: Kibana
 
 An Ansible Role that installs Kibana on Debian.
@@ -9,7 +5,7 @@ An Ansible Role that installs Kibana on Debian.
 ## Requirements
 
 - Requires at least Java 8.
-- Elasticsearch
+- ROL: MarioDevment.elasticsearch
 - **Memory: 2048mb minimum**
 - **2 CPU**
 
