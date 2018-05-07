@@ -1,4 +1,4 @@
 ---
 server_host: 0.0.0.0
-server_name: debianserver
+server_name: elserver
 server_elastic_search: http://0.0.0.0:9200

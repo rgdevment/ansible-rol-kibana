@@ -1,6 +1,6 @@
 # Ansible Role: Kibana
 
-An Ansible Role that installs Kibana on Debian.
+An Ansible Role that installs Kibana on Debian and Centos.
 
 ## Requirements
 
@@ -24,10 +24,12 @@ end
 
 ## Dependencies
 
+  - MarioDevment.java8
   - MarioDevment.elasticsearch
 
 ## Example Playbook
 
+    role: - MarioDevment.java8
     role: - MarioDevment.elasticsearch
     role: - MarioDevment.kibana
 
