@@ -7,3 +7,12 @@
     name: kibana
     state: latest
     install_recommends: yes
+
+- name: Configure Kibana.
+  template:
+    src: kibana.yml.base
+    dest: /etc/kibana/kibana.yml
+  notify: restart kibana
+
+- name: Deamon Kibana Search
+  command: "sudo update-rc.d kibana defaults 95 10"

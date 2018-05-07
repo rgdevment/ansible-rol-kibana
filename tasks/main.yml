@@ -9,30 +9,7 @@
   static: no
   when: ansible_os_family == 'Debian'
 
-- name: Install Kibana.
-  package: name=kibana state=present
-
-- name: Configure Kibana.
-  template:
-    src: kibana.yml.base
-    dest: /etc/kibana/kibana.yml
-  notify: restart kibana
-  
-- name: Ensure Kibana is started and enabled at boot.
+- name: Start service
   service:
     name: kibana
     state: started
-    enabled: yes
-  notify: restart kibana
-
-- name: Deamon kibana
-  command: "update-rc.d kibana defaults 95 10"
-
-- name: deamon kibana reload
-  command: "/bin/systemctl daemon-reload"
-
-- name: Service kibana enable
-  command: "/bin/systemctl enable kibana.service"
-
-- name: kibana start
-  command: "systemctl start kibana.service"

@@ -1,3 +1,14 @@
 ---
-- name: Install Kibana.
-  yum: pkg=kibana state=present
+- name: Install Kibana
+  sudo: yes
+  yum:
+    name: kibana
+
+- name: Configure Kibana.
+  template:
+    src: kibana.yml.base
+    dest: /etc/kibana/kibana.yml
+  notify: restart kibana
+
+- name: Deamon Kiabana Search
+  command: "systemctl enable kibana"
