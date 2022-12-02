@@ -32,7 +32,3 @@ end
     role: - MarioDevment.java8
     role: - MarioDevment.elasticsearch
     role: - MarioDevment.kibana
-
-## License
-
-MIT / BSD
